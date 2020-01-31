@@ -14,12 +14,12 @@ const NavBar: React.FC = () => {
           <img src="/assets/logo.jpg" alt="logo" style={{ marginRight: 10 }} />
           Kaysbook
         </Menu.Item>
-        <Menu.Item name="Activities" as={NavLink} to='/activities' />
+        <Menu.Item name="Events" as={NavLink} to='/activities' />
         <Menu.Item>
           <Button
             as={NavLink} to ='/createActivity'
             positive
-            content="Create Activity"
+            content="Create Event"
           ></Button>
         </Menu.Item>
       </Container>
