@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Menu, Container, Button } from "semantic-ui-react";
 import ActivityStore from "../../app/stores/activityStore";
 import { observer } from "mobx-react-lite";
+import { Link, NavLink } from "react-router-dom";
 
 
 const NavBar: React.FC = () => {
@@ -9,14 +10,14 @@ const NavBar: React.FC = () => {
   return (
     <Menu fixed="top" inverted>
       <Container>
-        <Menu.Item header>
+        <Menu.Item header as={NavLink} exact to='/'>
           <img src="/assets/logo.jpg" alt="logo" style={{ marginRight: 10 }} />
           Kaysbook
         </Menu.Item>
-        <Menu.Item name="Activities" />
+        <Menu.Item name="Activities" as={NavLink} to='/activities' />
         <Menu.Item>
           <Button
-            onClick={activityStore.openCreateForm}
+            as={NavLink} to ='/createActivity'
             positive
             content="Create Activity"
           ></Button>
