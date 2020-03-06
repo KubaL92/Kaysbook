@@ -1,13 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import { Grid } from "semantic-ui-react";
-import ActivityStore from "../../../app/stores/activityStore";
 import { observer } from "mobx-react-lite";
-import { RouteComponentProps, Link } from "react-router-dom";
+import { RouteComponentProps } from "react-router-dom";
 import { LoadingComponent } from "../../../app/layout/LoadingComponent";
 import ActivityDetailedHeader from "./ActivityDetailedHeader";
 import { ActivityDetailedInfo } from "./ActivityDetailedInfo";
 import { ActivityDetailedChat } from "./ActivityDetailedChat";
-import { ActivityDetailedSidebar } from "./ActivityDetailedSidebar";
+import  ActivityDetailedSidebar  from "./ActivityDetailedSidebar";
 import { RootStoreContext } from "../../../app/stores/rootStore";
 
 interface DetailParams {
@@ -39,7 +38,7 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailParams>> = ({
         <ActivityDetailedChat/>
       </Grid.Column>
       <Grid.Column width={6}>
-        <ActivityDetailedSidebar/>
+        <ActivityDetailedSidebar attendees={activity.attendees}/>
       </Grid.Column>
     </Grid>
   );
@@ -47,7 +46,6 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailParams>> = ({
 
 export default observer(ActivityDetails);
 
-{
   /* <Card fluid>
       <Image
         src={`/assets/categoryImages/${activity!.category}.jpg`}
@@ -78,4 +76,4 @@ export default observer(ActivityDetails);
         </Button.Group>
       </Card.Content>
     </Card> */
-}
+
