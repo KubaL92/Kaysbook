@@ -90,4 +90,3 @@ const ProfilePhotos = () => {
 };
 
 export default observer(ProfilePhotos);
-0;
