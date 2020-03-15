@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Header, Grid, Button } from "semantic-ui-react";
 import { observer } from "mobx-react-lite";
 import PhotoWidgetDropzone from "./PhotoWidgetDropzone";
-import { PhotoWidgerCropper } from "./PhotoWidgerCropper";
+import { PhotoWidgetCropper } from "./PhotoWidgerCropper";
 
 interface IProps {
   loading: boolean;
@@ -29,7 +29,7 @@ const PhotoUploadWidget: React.FC<IProps> = ({loading, uploadPhoto}) => {
         <Grid.Column width={4}>
           <Header sub color="teal" content="Step 2 - Resize image" />
           {files.length > 0 && (
-            <PhotoWidgerCropper
+            <PhotoWidgetCropper
               setImage={setImage}
               imagePreview={files[0].preview}
             />

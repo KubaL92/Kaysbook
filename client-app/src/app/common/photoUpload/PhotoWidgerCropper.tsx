@@ -7,7 +7,7 @@ interface IProps {
   imagePreview: string;
 }
 
-export const PhotoWidgerCropper: React.FC<IProps> = ({
+export const PhotoWidgetCropper: React.FC<IProps> = ({
   setImage,
   imagePreview
 }) => {
